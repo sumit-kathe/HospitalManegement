@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MainComponent from './Maincomponent/Maincomponent';
+import Doctors from './components/Doctor/Doctor';
+import Patient from './components/Patient/Patient';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Admin from './components/Admin/Admin';
 
 function App() {
+
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <MainComponent />,
+      children: [
+        {
+          path: '/',
+          element: <Admin />
+        },
+        {
+          path: '/doctor',
+          element: <Doctors />
+        },
+        {
+          path: '/patint',
+          element: <Patient />
+        },
+      ]
+    }
+    
+  ]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+   <>
+
+<RouterProvider router={router} />
+
+    </>)}
+  
+
 
 export default App;

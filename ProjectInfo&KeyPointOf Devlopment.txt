@@ -1,0 +1,6 @@
+
+**                send less as much as possible        avoid sending props try to make dynamic insted of sending props  
+
+**             while appling dynamic css use veriale to store the css property if you apply it with direcet   sometime it will not work properly. but when you creat the variable & stored the css property in  that so while rendering first it will creat the variable and collect the reqired info and then it will  send it to the className="variableName " this will work very smothly 
+
+**                Always try to make such component that you can use repeatedly depending upone the situvation.   like button componet for SMALL MEDIUM & LARGE butoon .  This will Follw " DRY(Do NOt Repeat Yourself) Rule of DEVlOPMENT "
