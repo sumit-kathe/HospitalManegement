@@ -4,3 +4,16 @@
 **             while appling dynamic css use veriale to store the css property if you apply it with direcet   sometime it will not work properly. but when you creat the variable & stored the css property in  that so while rendering first it will creat the variable and collect the reqired info and then it will  send it to the className="variableName " this will work very smothly 
 
 **                Always try to make such component that you can use repeatedly depending upone the situvation.   like button componet for SMALL MEDIUM & LARGE butoon .  This will Follw " DRY(Do NOt Repeat Yourself) Rule of DEVlOPMENT "
+
+
+**             After compliting perticular task/ work Close all the tabs .it is the sign of good Devp.   and In chrome also always keepe usefull tab open close all unnecessary tabs 
+
+
+** hame LOGin User ka data kabhi bhi kam pad sakta he isliye hum huse REDUX TOOLKIT ke anadr useEffect me store karenge taki humm use kahi par bhi use kar sakenge aur hum kahi par bhi  Dispatch -->action  call kar sake
+      for this specific action of "LOGIN" we are making one folder inside user of mainstore
+
+
+** keep in mind Only "COMPONENET" Name folder Starts With CApital Leter. with TSX extension
+      if the folder is not thee component then file name must be start with small leter with extension of TS not TSX
+
+
