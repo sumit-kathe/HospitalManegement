@@ -15,7 +15,18 @@ const userstore = createSlice({
 
             state.userData = action.payload;
 
+         },
+         signupUser: (state,action)=>{
+
+            state.userData = action.payload;
+
+         },
+         SetEvent: (state,action)=>{
+
+            state.userData = action.payload;
+
          }
+        
         
 
     }
@@ -25,6 +36,6 @@ const userstore = createSlice({
 
 // aur jo bhi curlibaracese ke andar he o hamara reducerfunction{saveUser} he wo same name se export hota he 
 
-export const  {saveUser} =userstore.actions;
+export const  {saveUser,signupUser,SetEvent} =userstore.actions;
 
 export default userstore;

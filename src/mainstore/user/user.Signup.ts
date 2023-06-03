@@ -1,6 +1,6 @@
-import { saveUser } from "./user.store"
+import { signupUser } from "./user.store"
 
-export const  loginUser= (userDetails:any)=>{
+export const  siginupUser= (userDetails:any)=>{
 
 
 
@@ -15,7 +15,7 @@ export const  loginUser= (userDetails:any)=>{
  
         const userpaylod = JSON.stringify(userDetails)
 
-        const userRes:any= await fetch("http://localhost:3001/login",{
+        const userRes:any= await fetch("http://localhost:3001/signup",{
           
         method:"POST",
         headers: {
@@ -36,7 +36,7 @@ export const  loginUser= (userDetails:any)=>{
 
         if (userData.status==200){
 
-        dispatch(saveUser(userData.userData))
+        dispatch(signupUser(userData.userData))
 
 
         }

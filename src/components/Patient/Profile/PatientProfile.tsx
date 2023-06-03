@@ -1,6 +1,6 @@
 
 
-const Patient =()=>{
+const PatientProfile =()=>{
 
 
     return(
@@ -13,4 +13,4 @@ const Patient =()=>{
     )
 }
 
-export default Patient
+export default PatientProfile;

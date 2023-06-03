@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink, Navigate } from 'react-router-dom';
-import { loginUser } from '../../mainstore/user/user.action';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../mainstore/user/user.Login';
 
 const Login = () => {
+
+  const navigateto = useNavigate();
     const dispatch: any = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,18 +43,20 @@ const Login = () => {
 
     // Perform login logic here
     console.log(email, password)
-   { <NavLink to="/admin"  />}
+
+  //  { <NavLink to="/admin"  />}
+ const sendToDispatch = {
+  email,
+  password
+}
+
     dispatch(
-        loginUser({
-            email,
-            password
-        })
-      );
+        loginUser(sendToDispatch,navigateto ));
   };
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <form className="w-1/3 p-8 bg-white rounded shadow-lg" onSubmit={handleSubmit}>
+      <form className="w-1/3 p-8 bg-white  shadow-lg  rounded-md  border-2 border-solid border-sky-500 " onSubmit={handleSubmit}>
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <div className="mb-4">
           <label htmlFor="email" className="block mb-2">
