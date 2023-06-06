@@ -38,7 +38,7 @@ export const  loginUser= (userDetails:any,navigateto:any)=>{
         if (userData.status==200){
           
         dispatch(saveUser(userData.userData))
-        console.log("from login tsx",userData.type)
+        // console.log("from login tsx",userData.type)
 
 
           // userData.type==="user" ?  navigateto('/user/profile') : userData.type==="doctor" ?  navigateto('/doctor/profile') : userData.type==="admin"? navigateto('/admin') : navigateto('/erorr') 

@@ -42,7 +42,7 @@ const Login = () => {
 
 
     // Perform login logic here
-    console.log(email, password)
+    // console.log(email, password)
 
   //  { <NavLink to="/admin"  />}
  const sendToDispatch = {

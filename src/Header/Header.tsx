@@ -25,7 +25,7 @@ const doctorTab=[
 const Header:React.FC=()=>{
 
   const {userData} = useSelector((state:any)=> state.user)
-  console.log("data from redux  toolkit in heder to check the type",userData)
+  // console.log("data from redux  toolkit in heder to check the type",userData)
 
 const SeletingTabs = userData.type === "user" ? userTab : userData.type === "doctor" ? doctorTab :adminTabs ;
 

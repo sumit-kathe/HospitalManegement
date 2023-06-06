@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import timeGridPlugin from '@fullcalendar/timegrid'
@@ -11,10 +11,31 @@ import {
     EventContentArg,
     formatDate,
   } from '@fullcalendar/core'
-import { useDispatch } from 'react-redux'
-import { SetEventFun } from '../../../mainstore/user/setEvent'
+import { useDispatch, useSelector } from 'react-redux'
+import { getEvents, saveEvent } from '../../../mainstore/calendar/calende-action'
 
 const SetAppointment =()=>{
+    
+  const {userData} = useSelector((state:any)=> state.user);
+
+  const {events} = useSelector((state:any)=> state.calender);
+  console.log("events from set", events);
+
+  const dispatchFun:any  = useDispatch();
+
+  // console.log("user datat in setAppointemnt before creating event",userData.id)
+
+
+useEffect(()=>{
+  if(userData && userData.id){
+
+    dispatch(getEvents(userData.id))
+
+  }
+
+
+},[])
+
     const renderEventContent = (eventContent: EventContentArg) => {
         return (
           <>
@@ -30,14 +51,23 @@ const SetAppointment =()=>{
     
         calendarApi.unselect() // clear date selection
     
+        const newEvent:any={
+          id: createEventId(),
+          title,
+          start: selectInfo.startStr,
+          end: selectInfo.endStr,
+          allDay: selectInfo.allDay,
+          userId:userData.id // user  id isliye bhej rahe he Q ki hum perticular doctor ke liye appointment. fetch kar paye 
+        }
+
+
         if (title) {
-          calendarApi.addEvent({
-            id: createEventId(),
-            title,
-            start: selectInfo.startStr,
-            end: selectInfo.endStr,
-            allDay: selectInfo.allDay
-          })
+
+          dispatchFun(saveEvent(newEvent));
+          calendarApi.addEvent(newEvent)
+  // console.log("user datat in setAppointemnt after creating event",userData.id)
+  // console.log("newEvent aya he mere pass",newEvent)
+
         }
     // return(<>
     //     <h1> heyyy Doctor</h1>
@@ -76,7 +106,7 @@ const SetAppointment =()=>{
       console.log("editable",editable)
       console.log("color",color)
 
-      dispatch(SetEventFun({name,startDate,endDate,editable,color}))
+     
       }
 
 
@@ -182,10 +212,12 @@ const SetAppointment =()=>{
         dayMaxEvents={true}
         // weekends={this.state.weekendsVisible}
         initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
+        //alreday mention here to use the `events` setting
         select={handleDateSelect}
         eventContent={renderEventContent} // custom render function
         eventClick={handleEventClick}
         eventsSet={handleEvents}
+        events={events}
       />
         
         </>
