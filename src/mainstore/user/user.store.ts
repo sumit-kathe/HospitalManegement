@@ -6,7 +6,8 @@ const userstore = createSlice({
     name:"userStore",
     initialState:{
  
-        userData:{}
+        userData:{},
+        events:[]
 
     },
     reducers:{
@@ -21,6 +22,11 @@ const userstore = createSlice({
             state.userData = action.payload;
 
          },
+        dataofallEvent: (state,action)=>{
+
+              state.events=action.payload.events;
+
+        }
         
         
 
@@ -31,6 +37,6 @@ const userstore = createSlice({
 
 // aur jo bhi curlibaracese ke andar he o hamara reducerfunction{saveUser} he wo same name se export hota he 
 
-export const  {saveUser,signupUser} =userstore.actions;
+export const  {saveUser,signupUser,dataofallEvent} =userstore.actions;
 
 export default userstore;

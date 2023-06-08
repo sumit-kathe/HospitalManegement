@@ -93,3 +93,23 @@ so basical ------- website should be simple user friendly easy to understand for
      but we are using FUNCTION based component so insted of Navigat we have to use UseNavigate hook of React-router. 
  
    one more problem is that you can not use "UseNavigate" hoook in TS file it means it must be a function component where you can use "UseNavigate"  so inorder to solve this issue we will  use the PROPS concept  we will use  "UseNavigate" in FUNCTIONS COMPONENET and then we wil pass it in REqured TS file.
+
+   👉👉👉👉 har  ek specific action or component ke liye alag se store bana na padta he 
+
+
+   👉👉👉👉 APPOINTMENT  
+
+1) phehele Apointemt ko Api ke madat se store karenge DB me 
+2) badme data ko get karnege API se 
+3)Store me bhi set karna padenga inorder to access it anywhere
+
+4) fir data ko events={} namak props me pass karnge so that wo UI me dikhe ki KAha se Kaha BOOK hua he 
+
+
+
+
+
+👉👉👉👉momrnt.js ka use karnege hamre data UR time ko format karne ke liye specific format me
+
+
+👉👉👉👉" flex wrap" important flex property to make the button/anythig during map  in a perticular width without overflow  "width" play an vital role in this game
