@@ -28,7 +28,7 @@ const BookAppoinment =()=>{
     }
 
 
-    const allButton = events.map((event:any)=>{
+    const allButton = events.map((event:any, index:any)=>{
 
        
         const eventStart= moment(event.start).format('MMMM Do YYYY, h:mm');
@@ -41,7 +41,7 @@ const BookAppoinment =()=>{
             
         return(
             <>
- <button  className=" bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={()=>bookAppointemnt(event)}>{`${event.title} - ${eventStart} to ${eventEnd}`}</button></>
+ <button key={index}  className=" bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={()=>bookAppointemnt(event)}>{`${event.title} - ${eventStart} to ${eventEnd}`}</button></>
            
             
             

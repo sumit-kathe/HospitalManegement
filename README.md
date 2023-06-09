@@ -109,7 +109,23 @@ so basical ------- website should be simple user friendly easy to understand for
 
 
 
-👉👉👉👉momrnt.js ka use karnege hamre data UR time ko format karne ke liye specific format me
+👉👉👉👉 momrnt.js ka use karnege hamre data UR time ko format karne ke liye specific format me
 
 
 👉👉👉👉" flex wrap" important flex property to make the button/anythig during map  in a perticular width without overflow  "width" play an vital role in this game
+
+
+
+
+
+
+
+
+
+
+
+👉👉👉👉 "REDUX" Should be the "only" source of truth of Our Application.
+ what does it means if you ARE USing react-redux then your hole api must be called inside the redux store and everythinf is connted with redux 
+
+
+ 👉👉👉👉 Variable name is very important So variable name should be as simple/meaningfull/stdandred/short/ as possible.

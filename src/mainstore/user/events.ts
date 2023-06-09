@@ -1,4 +1,4 @@
-import { dataofallEvent } from "./user.store";
+import { bookedAppointment, dataofallEvent } from "./user.store";
 
 
 export const totalEvent=()=>{
@@ -89,6 +89,8 @@ export const MybookAppointermtFun=(userId:any)=>{
         const {events} = await bookiAppointemntAPI.json();
 
         console.log('getAllBookAppointmentRes',events)
+
+        dispatch(bookedAppointment({events}))
     }
 }
 
